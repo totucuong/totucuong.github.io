@@ -19,6 +19,7 @@ I will illustrate this process in different Python notebooks as follows.
 	- Linear models for regression/classification
 	- Neural networks
 	- Probablistic graphical networks
+	- Last but not least, [prior constructions](/pages/demos/prior_construction.html)
 - Infer hidden quantities:
 	- Variation inference
 	- [Sampling methods:](/pages/demos/MCMC_inference.html) 
