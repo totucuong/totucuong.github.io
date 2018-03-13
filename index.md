@@ -21,7 +21,7 @@ I will illustrate this process in different Python notebooks as follows.
 	- Probablistic graphical networks
 - Infer hidden quantities:
 	- Variation inference
-	- Sampling methods : 
+	- [Sampling methods:](/pages/demos/MCMC_inference.html) 
 		- Importance sampling
 		- MCMC sampling: Metropolis-Hastings, Gibbs, and Hamiltonian MC.
 - Apply model:
@@ -32,4 +32,4 @@ I will illustrate this process in different Python notebooks as follows.
 	- using posertior predictive checks
 
 
-
+Please note that the notebooks' content was derived from a lot of sources and modified by me to suit my own understanding. I will try to give credits to the original source as much as possible. I ask for your forgiveness if I fail to do so.
