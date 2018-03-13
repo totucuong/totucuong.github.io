@@ -32,5 +32,10 @@ I will illustrate this process in different Python notebooks as follows.
 - Critize model:
 	- using posertior predictive checks
 
+There are also several case studies:
+
+- [Porto taxi trajectory clustering](/pages/demos/porto.html)
+- [Facebook check-ins prediction](/pages/demos/facebook.html)
+- [Some fun geo-visualization stuff]()
 
 Please note that the notebooks' content was derived from a lot of sources and modified by me to suit my own understanding. I will try to give credits to the original source as much as possible. I ask for your forgiveness if I fail to do so.
