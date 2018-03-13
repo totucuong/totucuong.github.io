@@ -3,14 +3,28 @@ layout: page
 title: Bayesian data analysis and more.
 
 ---
+It is often hard to see the relationship among machine learning methods. For example, one can view the popular k-means clustering algorithm as an instance of expectation maximization, which, again, can be viewed as a special case ariational inference. 
 
-I notice that it is often hard to see the relationship between machine learning algorithms. In this blog, I will write tutorial about diffrent topics and explain how they are related to each other. Most of the theory are drawn from the book Pattern Recognition and Machine Learning by Bishop and the demo will be written in Python notebook.
+Moreover when you learn a method such expectation maximization, or MCMC sampling methods, you can spend hours to understand the mathematics behind them. Yet, when it comes to implementation, it is not so clear how those formulas can be materialized into code.
+
+This motivates me to write a series of Python notebooks to document my knowledge about machine learning methods, their relationship with each other, and, more importantly, their applications. 
+
+Most of the mathematics are drawn from:
+
+ 1. Pattern Recognition and Machine Learning, Bishop.
+ 2. An Introduction to MCMC for Machine Learning, C. Andrieu, et al.
+ 3. Build, Compute, Critique, Repeat: Data Analysis with Latent Variable Models, David M. Blei.
+ 4. A Conceptual Introduction to Hamiltonian Monte Carlo, Michael Betancourt.
+ 5. CS231n: Convolutional Neural Networks for Visual Recognition, Stanford.
+
+Please note that the notebooks' content was derived from a lot of sources and modified by me to reflect my own understanding. Even though, I try to give credits to the original source as much as possible, it is almost certain that I will miss something. I ask for your forgiveness in advance.
+
 
 What does this mean by doing data analysis? The statistician Box suggest the following process:
 
 ![Box loop](/assets/gfx/box_model.png)
 
-I will illustrate this process in different Python notebooks as follows.
+I will illustrate this process in the following Python notebooks:
 
 
 - Building models
@@ -38,4 +52,3 @@ There are also several case studies:
 - [Facebook check-ins prediction](/pages/demos/facebook.html)
 - [Some fun geo-visualization stuff]()
 
-Please note that the notebooks' content was derived from a lot of sources and modified by me to suit my own understanding. I will try to give credits to the original source as much as possible. I ask for your forgiveness if I fail to do so.
