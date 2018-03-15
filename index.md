@@ -28,12 +28,8 @@ I will illustrate this process in the following Python notebooks:
 
 
 - Building models
-	- [Hierarchical (Multilevel) model]
 	- [Latent (hidden) probabilistic models: GMM, k-means, etc.](/pages/demos/em.html)
-	- Linear models for regression/classification
-	- Neural networks
-	- Probablistic graphical networks
-	- Last but not least, [prior constructions](/pages/demos/prior_construction.html)
+	- [Prior constructions](/pages/demos/prior_construction.html)
 - Infer hidden quantities:
 	- Variation inference
 	- [Sampling methods:](/pages/demos/MCMC_inference.html) 
@@ -50,5 +46,5 @@ There are also several case studies:
 
 - [Porto taxi trajectory clustering](/pages/demos/porto.html)
 - [Facebook check-ins prediction](/pages/demos/facebook.html)
-- [Some fun geo-visualization stuff]()
+- [Some fun geo-visualization stuff](/pages/demos/towers.html)
 
