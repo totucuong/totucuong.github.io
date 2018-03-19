@@ -31,7 +31,7 @@ I will illustrate this process in the following Python notebooks:
 	- [Latent (hidden) probabilistic models: GMM, k-means, etc.](/pages/demos/em.html)
 	- [Prior constructions](/pages/demos/prior_construction.html)
 - Infer hidden quantities:
-	- Variation inference
+	- [Variation inference](/pages/demos/variational_inference.html)
 	- [Sampling methods:](/pages/demos/MCMC_inference.html) 
 		- Importance sampling
 		- MCMC sampling: Metropolis-Hastings, Gibbs, and Hamiltonian MC.
