@@ -11934,6 +11934,83 @@ x_i|c_i, \mu &amp;\sim N(c_i^T \mu, 1), i = 1, \dots, n\\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's derive the above pseudocode. Recall that we have three types of varitional parameters in univariate GMM, namely $\v{m}, \v{s}^2, \boldsymbol{\phi}.$ These first two are the means, the variances of gaussian distributions of the means of GMM components. The last is the probability of data points coming from different components.</p>
+<p>First, we need to write out the expression for the ELBO, then derive the update rules for different variational factors.</p>
+<h3 id="Elbo(q)-update-rules">Elbo(q) update rules<a class="anchor-link" href="#Elbo(q)-update-rules">&#182;</a></h3><p>$$ELBO(q) = \sum_{k}^KE[\log p(\mu_k)] + \sum_i^n \big(E[\log p(c_i)]  + E[\log p(x_i|c_i)]\big)  - \sum_i E[\log q(c_i) - \sum_k E[\log q(\mu_k)$$</p>
+<p>These are expectation with respect to variational densities $q$. The deriviation is tedious , leading to no understanding whatsoever. After all these derivations, maybe one need to take a look at <strong>black-box variational inference</strong>!</p>
+<p>The first term</p>
+<p>$$
+\begin{align}
+E_q[\log p(\mu_k)] &amp;= \int q(\mu_k) \log p(\mu_k)d\mu_k\\
+                    &amp;= -\frac{1}{2\sigma^2}\int q(\mu_k)\mu_k^2\\
+                   &amp;= -\frac{1}{2\sigma^2}\int \frac{1}{\sqrt{2\pi}s_k^2} exp\big\{-\frac{1}{2s_k^2}(\mu_k - m_k)^2\big\}\mu_k^2)  + const\\
+                   &amp;= -\frac{1}{2\sigma^2}(s_k^2 + m_k^2) + const
+\end{align}
+$$</p>
+<p>The last equality is achieved by performing change of variable $x = \mu_k - m_k$.</p>
+<p>The second term:</p>
+<p>$$\begin{align}E_q[\log p(c_i)] &amp;= \sum_{c_i}q(c_i)\log p(c_i)\\
+                                &amp;=  \sum_{c_i}\big[\prod_k\phi_{ik}^{c_{ik}} \log \frac{1}{K}\big]
+\end{align}$$</p>
+<p>The third term:</p>
+<p>$$
+\begin{align}
+E_q[\log p(x_i|c_i, \mu)] &amp;= E_q[\log N(x_i|c_i^T\boldsymbol{\mu}, 1)]\\
+                          &amp;= E_q[\log \prod_k N(x_i|\mu_k, 1)^{c_{ik}}]\\
+                          &amp;= \sum_k E_q(c_{ik})\log N(x_i|\mu_k, 1)\\
+                          &amp;= \sum_k \phi_{ik}\log N(x_i|\mu_k, 1)
+\end{align}
+$$</p>
+<p>The second to last equality is becaues of $\log N(x_i|\mu_k, 1)$ is a constant wrt to the variational density $q$. The last equality is because of, since $c_i$ is an indicator vector, we have $E[c_{ik}] = \phi_{ik}$.</p>
+<p>The forth term:</p>
+<p>$$
+\begin{align}
+E_q[\log q(c_i))] &amp; = \sum_{c_i}q(c_i)\log q(c_i)\\
+                   &amp; = \sum_{c_i}\big[\prod_k\phi_{ik}^{c_{ik}} \log\big\{ \prod_k\phi_{ik}^{c_{ik}} \big\}\big]
+\end{align}
+$$</p>
+<p>The last term:</p>
+<p>$$
+\begin{align}
+E_q[\log q(\mu_k)] &amp;= -\frac{1}{2}\log 2\pi s_k^2 e\\
+                  &amp;= -\frac{1}{2}\log s_k^2 + const
+\end{align}
+$$
+This is just the negative of the entropy of a $N(m_k, s_k^2).$</p>
+<h3 id="Mixture-assignments-update-rule">Mixture assignments update rule<a class="anchor-link" href="#Mixture-assignments-update-rule">&#182;</a></h3><p>We need to construct variation update for the cluster assignment $c_i$. By looking at the expression for $EBLO(q)$ and the fundamental formula for VI with mean-field assumption:</p>
+<p>$$q^*_j(z_j) \propto exp(E_j[\log p(z_{-j}, \v{z}_j, \v{x})])$$</p>
+<p>What we do is to look at $Elbo(q)$, collect every terms that relates to $q_j(z_j)$, i.e., $z_j$ and $q_j$, while ignore other terms since they are considered constant wrt to $q_j(z_j)$. With this we have</p>
+<p>$$q^*(c_i) \propto exp(log(p(c_i) + E[\log p(x_i | c_i, \boldsymbol{\mu})])$$.</p>
+<p>Here the expectation is taken with respect to $p(\boldsymbol{\mu})$
+Applying same kind of techniques like we did in deriving $ELBO(q)$ update rules, we the variational update for the ith cluster assignment is:</p>
+<p>$$\phi_{ik} \propto exp\big\{E[\mu_k]x_i - E[\mu_k^2]/2 \big\}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mixture-component-update-rule">Mixture component update rule<a class="anchor-link" href="#Mixture-component-update-rule">&#182;</a></h3><p>We turn to the varational densities $q(\mu_k) = N(m_k, s_k^2)$. We need to derive update rules for each $(m_k, s_k^2)$, while keeping $\boldsymbol{\phi}, \v{m}_{-k}, \v{s^2}_{-k}$ fixed.</p>
+<p>$$q^*(\mu_k) \propto exp\big\{ \log p(\mu_k) + \sum_{i=1}^n E[log(p(x_i| c_i, \boldsymbol{\mu}))]\big\}$$</p>
+<p>Now we have</p>
+<p>$$\begin{align}
+\log q(\mu_k) &amp;= \log p(\mu_k) + \sum_{i}E[log(p(x_i))] + const\\
+               &amp;= -\frac{\mu_k^2}{2\sigma^2} + \sum_i E[c_{ik} log p(x_i|\mu_k)] + const\\
+               &amp;= (\sum_i \phi_{ik}x_i)\mu_k - (\frac{1}{2\sigma^2} + \sum_i\phi_{ik}/2)\mu_k^2 + const \end{align}$$</p>
+<p>Recall that $p(x_i | c_i, \boldsymbol{\mu}) = \prod_{k=1}^{K} p(x_i | \mu_k)^{c_{ik}}$, taking the log and ignore terms that are not related to $\mu_k$, then we have the second equality.</p>
+<p>We can see that $q(\mu_k)$ belongs to the exponetial family distribution with sufficient statistics $(\mu_k, \mu_k^2)$ and natural parameters $(\sum_i \phi_{ik}x_i, - \frac{1}{2\sigma^2} - \sum_i\phi_{ik}/2)$, i.e., $q(\mu_k)$ is a Gaussian distribution with mean and variance computed as follows (This is our update rule!):</p>
+<p>$$m_k = \frac{\sum_i \phi_{ik} x_i}{1/\sigma^2 + \sum_{i}\phi_{ik}}$$</p>
+<p>$$s_{k}^2 = \frac{1}{1/\sigma^2 + \sum_{i}\phi_{ik}}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Praticalities">Praticalities<a class="anchor-link" href="#Praticalities">&#182;</a></h3><p><strong>Initialization</strong>: The ELBO is normally a non-convex function therefore CAVI will find a local optimium, which can be sensitive to initialization. For the case of GMM, we can initialize means and variances of variational factors using empirical mean and variances of data.</p>
 <p><strong>Assessing convergence</strong>: Computing ELBO for the whole data set can be cubersome. It could require significant mathematical efforts to derive a close form of all expectations in ELBO formula. We can instead check for the convergence of variational parameters which is much easier since we already have them. Or we can compute the average log predictive of a small held-out dataset and monitor its convergence.</p>
 <p>For example in GMM model, suppose we keep m randomly choosen points, then we compute $$\frac{1}{m}\sum_{i=1}^{m}\log(p(x_i)),$$</p>
@@ -14891,85 +14968,6 @@ AAAAAExhdmY1Ny44My4xMDA=
 <span class="s2">    }</span>
 <span class="s2">}</span>
 <span class="s2">&quot;&quot;&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Appendix">Appendix<a class="anchor-link" href="#Appendix">&#182;</a></h1><p>In implementation variational inference of GMM, we use some ideas that may not be clear at the first glance. We will explain them now.</p>
-<h3 id="Log-sum-exp-trick">Log-sum-exp trick<a class="anchor-link" href="#Log-sum-exp-trick">&#182;</a></h3><h3 id="The-Einstein-sum">The Einstein sum<a class="anchor-link" href="#The-Einstein-sum">&#182;</a></h3><h3 id="Gaussian-Wishart-distribution">Gaussian-Wishart distribution<a class="anchor-link" href="#Gaussian-Wishart-distribution">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># uncomment me to produce figure elbo.png</span>
-<span class="c1"># %matplotlib inline</span>
-<span class="c1"># from scipy.stats import norm</span>
-<span class="c1"># from scipy.stats import gamma</span>
-<span class="c1"># import numpy as np</span>
-<span class="c1"># import matplotlib.pyplot as plt</span>
-<span class="c1"># import seaborn as sns</span>
-
-<span class="c1"># z = np.linspace(-3,15, 100)</span>
-<span class="c1"># plt.plot(z,norm.pdf(z, loc=4), label=&#39;p(X|Z)&#39;)</span>
-<span class="c1"># plt.plot(z, norm.pdf(z, loc = 7), label=&#39;p(Z)&#39;)</span>
-<span class="c1"># plt.plot(z, norm.pdf(z, loc = 5, scale=3), label=r&#39;$q(Z)^*$&#39;)</span>
-<span class="c1"># plt.gca().set_xlabel(&quot;Z&quot;)</span>
-<span class="c1"># plt.legend()</span>
-<span class="c1"># plt.savefig(&#39;gfx/elbo.png&#39;)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # some functions to generate simulation data</span>
-<span class="c1"># def generate_mixture_data(K, Nk, mus, sigmas):</span>
-<span class="c1">#     data = np.empty(shape=(K*Nk, 3))</span>
-<span class="c1">#     for k in range(K):</span>
-<span class="c1">#         x = multivariate_normal.rvs(mean=mus[k], cov=sigmas[k], size=Nk)</span>
-<span class="c1">#         c = np.ones(shape=(Nk, 1)) * k</span>
-<span class="c1">#         x = np.concatenate((x,c), axis=-1)</span>
-<span class="c1">#         data[k*Nk:(k+1)*Nk, :] = x</span>
-<span class="c1">#     return data</span>
-
-<span class="c1"># def lazy_generate_mixture_data():</span>
-<span class="c1">#     # generate some data</span>
-<span class="c1">#     K = 5</span>
-
-<span class="c1">#     # points per component</span>
-<span class="c1">#     Nk = 100</span>
-
-<span class="c1">#     # means</span>
-<span class="c1">#     mus = np.array([[-2, 2], [-1, 1], [3,2], [-4,-4], [-5,-5]])</span>
-
-<span class="c1">#     # variances</span>
-<span class="c1">#     sigmas = np.array([[[0.5, 0], [0, 0.84]],</span>
-<span class="c1">#                    [[0.5, 0.3], [0.3, 0.6]],</span>
-<span class="c1">#                    [[0.5, -0.3], [-0.3, 0.6]],</span>
-<span class="c1">#                    [[0.5, 0], [0, 0.6]],</span>
-<span class="c1">#                    [[0.5, 0], [0, 0.6]]</span>
-<span class="c1">#                   ])</span>
-<span class="c1">#     return generate_mixture_data(K, Nk, mus, sigmas)</span>
-
-<span class="c1"># data = lazy_generate_mixture_data()</span>
-<span class="c1"># plt.scatter(data[:,0], data[:, 1], c=data[:,2]);</span>
 </pre></div>
 
 </div>
