@@ -28,23 +28,12 @@ What does this mean by doing data analysis? The statistician Box suggest the fol
 I will illustrate this process in the following Python notebooks:
 
 
-- Building models
-	- [Latent (hidden) probabilistic models: GMM, k-means, etc.](/pages/demos/em.html)
-	- [Prior constructions](/pages/demos/prior_construction.html)
-- Infer hidden quantities:
-	- [Variation inference](/pages/demos/variational_inference.html)
-	- [Sampling methods:](/pages/demos/MCMC_inference.html) 
-		- Importance sampling
-		- MCMC sampling: Metropolis-Hastings, Gibbs, and Hamiltonian MC.
-- Apply model:
-	- Perform prediction
-	- Data exploration
-	- Deploying models via REST API.
-- Critize model:
-	- using posertior predictive checks
-
-There are also several case studies:
-
-- [Porto taxi trajectory clustering](/pages/demos/porto.html)
-- [Facebook check-ins prediction](/pages/demos/facebook.html)
-- [Some fun geo-visualization stuff](/pages/demos/towers.html)
+- [Expectation maximization](/pages/demos/em.html)
+- Approximiate inference:
+	- [Variational inference](/pages/demos/variational_inference.html)
+	- [Sampling methods](/pages/demos/MCMC_inference.html) 
+- [Prior constructions](/pages/demos/prior_construction.html)
+- Case studies:
+	-[Porto taxi trajectory clustering](/pages/demos/porto.html)
+	- [Facebook check-ins prediction](/pages/demos/facebook.html)
+	- [Some fun geo-visualization stuff](/pages/demos/towers.html)
