@@ -4,9 +4,7 @@ title: spectrum - A truth discovery library
 description: Overview of spectrum's features
 ---
 
-[Spectrum](https://github.com/totucuong/spectrum) is a library that provides implementation of truth discovery algorithms.
-
-The goal of truth discovery is to estimate the correct object values as well as data sources' trustworthiness. An object's value can be discrete or continuous. For example, a person's birthplace has a discrete domain, i.e, the birth location. Whereas a stock price is continuous. 
+[Spectrum](https://github.com/totucuong/spectrum) is a library that provides implementation of truth discovery algorithms. The goal of truth discovery is to estimate the correct object values as well as data sources' trustworthiness. An object's value can be discrete or continuous. For example, a person's birthplace has a discrete domain, i.e, the birth location. Whereas a stock price is continuous. 
 
 In general, a truth discovery probablistic model has the following structure
 
