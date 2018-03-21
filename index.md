@@ -19,3 +19,31 @@ The challenge is to scale truth discovery techniques to cope with millions of da
         <li><span>2009</span> &raquo; <a href="./documents/master_thesis.pdf">Visualization of Large Process Models"</a></li>
   </ul>
 
+---
+
+<div class="container">
+<h4><a name="contact"></a>contact</h4>
+
+    <div class="row-fluid">
+        <div class="span5">
+            To Tu Cuong<br/>
+            <a href="http://www.mi.fu-berlin.de/en/inf/groups/ag-db/index.html">Department of Computer Science</a><br/>
+            <a href="http://www.fu-berlin.de/en/index.html">Free University of Berlin</a><br/>
+            Takustr 9.<br/>
+            14195<br/>
+            Berlin<br/>
+            Germany<br/><br/>
+
+            <div id="hide_email">
+            Email: <code>to</code><b>I</b><code>.cuong</code><b>don't</b><code>@</code><b>want</b><code>fu-</code><b>spam!
+            </b><code>berlin</code><b>So</b><code>.</code><b>please</b><code>de</code><br/>
+            </div>
+        </div>
+
+        <div class="span2">
+        <a href="../assets/gfx/me.jpg">
+            <img src="../assets/gfx/me.jpg"
+                  title="To Tu Cuong" alt="To Tu Cuong"/></a>
+        </div>
+    </div>
+</div>
