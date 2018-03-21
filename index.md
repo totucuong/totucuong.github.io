@@ -1,50 +1,21 @@
 ---
 layout: page
-title: Bayesian data analysis and more.
+title: To Tu Cuong
 
 ---
-It is often hard to see the relationship among machine learning methods. For example, one can view the popular k-means clustering algorithm as an instance of expectation maximization, which, again, can be viewed as a special case ariational inference. 
 
-Moreover when you learn a method such expectation maximization, or MCMC sampling methods, you can spend hours to understand the mathematics behind them. Yet, when it comes to implementation, it is not so clear how those formulas can be materialized into code.
+<p>My name is Tô Tự Cường. I'm currently working on scaling up truth-discovery algorithms using stochastic variational inference. Truth discovery techniques are used to compute correct values from a set of conflicting ones provided by different data sources. These techniques have a wide range of applications in different fields such as crowd/social sensing, computational journalism (detecting fake news), data integration, or knowledge graph construction.
 
-This motivates me to write a series of Python notebooks to document my knowledge about machine learning methods, their relationship with each other, and, more importantly, their applications. 
+The challenge is to scale truth discovery techniques to cope with millions of data points coming from millions of sources. 
 
-Most of the mathematics are drawn from:
+</p>
 
- 1. Pattern Recognition and Machine Learning, Bishop.
- 2. An Introduction to MCMC for Machine Learning, C. Andrieu, et al.
- 3. Build, Compute, Critique, Repeat: Data Analysis with Latent Variable Models, David M. Blei.
- 4. A Conceptual Introduction to Hamiltonian Monte Carlo, Michael Betancourt.
- 5. CS231n: Convolutional Neural Networks for Visual Recognition, Stanford.
-
-Please note that the notebooks' content was derived from a lot of sources and modified by me to reflect my own understanding. Even though, I try to give credits to the original source as much as possible, it is almost certain that I will miss something. I ask for your forgiveness in advance.
-
-
-What does this mean by doing data analysis? The statistician Box suggest the following process:
-
-![Box loop](/assets/gfx/box_model.png)
-
-I will illustrate this process in the following Python notebooks:
-
-
-- Building models
-	- [Latent (hidden) probabilistic models: GMM, k-means, etc.](/pages/demos/em.html)
-	- [Prior constructions](/pages/demos/prior_construction.html)
-- Infer hidden quantities:
-	- [Variation inference](/pages/demos/variational_inference.html)
-	- [Sampling methods:](/pages/demos/MCMC_inference.html) 
-		- Importance sampling
-		- MCMC sampling: Metropolis-Hastings, Gibbs, and Hamiltonian MC.
-- Apply model:
-	- Perform prediction
-	- Data exploration
-	- Deploying models via REST API.
-- Critize model:
-	- using posertior predictive checks
-
-There are also several case studies:
-
-- [Porto taxi trajectory clustering](/pages/demos/porto.html)
-- [Facebook check-ins prediction](/pages/demos/facebook.html)
-- [Some fun geo-visualization stuff](/pages/demos/towers.html)
+<h3>Publications</h3>
+  <ul class="posts">
+        <li><span>2017</span> &raquo; <a href="https://link.springer.com/chapter/10.1007/978-3-319-47874-6_11">Applicability of Sequence Analysis Methods in Analyzing Peer-Production Systems: A Case Study in Wikidata</a></li>
+        <li><span>2014</span> &raquo; <a href="https://link.springer.com/chapter/10.1007/978-3-319-19743-2_37">DOOR: A Data Model for Crowdsourcing with Application to Emergency Response</a></li>
+        <li><span>2014</span> &raquo; <a href="http://dl.acm.org/citation.cfm?doid=2534732.2534738">CrowdRoute: a crowd-sourced routing algorithm in public transit networks</a></li>
+        <li><span>2013</span> &raquo; <a href="http://dl.acm.org/citation.cfm?doid=2492517.2500274">ChurnVis: visualizing mobile telecommunications churn on a social network with attributes</a></li>
+        <li><span>2009</span> &raquo; <a href="./documents/master_thesis.pdf">Visualization of Large Process Models"</a></li>
+  </ul>
 
