@@ -10,4 +10,4 @@ In general, a truth discovery probablistic model has the following structure
 
 ![Probalistic graphical model of truth discovery](/assets/gfx/pgm_truthfinding.pdf)
 
-The number of data sources, $|O|$, and the number of values, $c_{s,o}$, could be of millions. This makes exact infernece on truth discovery models intractable. Therefore, we need to resolve to approximate inferences such as variational inference or MCMC sampling methods.
+The number of data sources and the number of values, $c_{s,o}$, could be of millions. This makes exact infernece on truth discovery models intractable. Therefore, we need to resolve to approximate inferences such as variational inference or MCMC sampling methods.
