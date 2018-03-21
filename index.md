@@ -35,8 +35,7 @@ The challenge is to scale truth discovery techniques to cope with millions of da
             Germany<br/><br/>
 
             <div id="hide_email">
-            Email: <code>to</code><b>I</b><code>.cuong</code><b>don't</b><code>@</code><b>want</b><code>fu-</code><b>spam!
-            </b><code>berlin</code><b>So</b><code>.</code><b>please</b><code>de</code><br/>
+            Email: to.cuong[at]fu-berlin[dot]de<br/>
             </div>
         </div>
 
