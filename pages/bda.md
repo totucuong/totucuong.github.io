@@ -1,8 +1,8 @@
 
 ---
 layout: page
-title: Bayesian Data Analysis Tutorial
-description: Bayesian Data Analysis Tutorial
+title: Machine Learning
+description: A blog about machine learning techniques and their applications
 ---
 
 It is often hard to see the relationship among machine learning methods. For example, one can view the popular k-means clustering algorithm as an instance of expectation maximization, which, again, can be viewed as a special case ariational inference. 
