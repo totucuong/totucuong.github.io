@@ -22,26 +22,20 @@ The challenge is to scale truth discovery techniques to cope with millions of da
 ---
 
 <div class="container">
-<h4><a name="contact"></a>contact</h4>
+<h4><a name="contact"></a>Contact</h4>
 
     <div class="row-fluid">
         <div class="span5">
             To Tu Cuong<br/>
-            <a href="http://www.mi.fu-berlin.de/en/inf/groups/ag-db/index.html">Department of Computer Science</a><br/>
-            <a href="http://www.fu-berlin.de/en/index.html">Free University of Berlin</a><br/>
-            Takustr 9.<br/>
-            14195<br/>
-            Berlin<br/>
-            Germany<br/><br/>
 
             <div id="hide_email">
-            Email: to.cuong[at]fu-berlin[dot]de<br/>
+            Email: totucuong[at]gmail[dot]com<br/>
             </div>
         </div>
 
-        <div class="span2">
-        <a href="../assets/gfx/me.jpg">
-            <img src="../assets/gfx/me.jpg"
+        <div class="span5">
+        <a href="../assets/gfx/profile_small.jpg">
+            <img src="../assets/gfx/profile_small.jpg"
                   title="To Tu Cuong" alt="To Tu Cuong"/></a>
         </div>
     </div>
