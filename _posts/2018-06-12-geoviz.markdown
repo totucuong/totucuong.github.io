@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "geo visualization"
+date:   2018-06-12
+author: To Tu Cuong
+---
+I always love map. Information when displayed on a map can reveal a lot of insights. So here is the map of mobile towers in [Egypt](/pages/demos/towers.html).

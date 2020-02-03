@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "variational inference"
+date:   2018-02-15
+author: To Tu Cuong
+---
+Variational inference is type of approximate inference. It allows use to approxiate posterior distribution $$p(z \mid x)$$. Here is a [small notebook](/pages/demos/variational_inference.html) that I wrote.
+
+References:
+1. Pattern Recognition and Machine Learning, Christopher .M. Bishop. 
+2. Variational Inference: A Review for Statisticians, David M. Blei, Alp Kucukelbir, Jon D. McAuliffe

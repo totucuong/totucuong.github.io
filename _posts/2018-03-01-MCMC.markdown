@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "markov chain monte carlo inference"
+date:   2018-03-01
+author: To Tu Cuong
+---
+In the previous blog, I wrote about [variational inference](2018/02/15/VI) as a type of approximate inference. Today let's talk about another type of approximate inference, namely Markov Chain Monte Carlo. Here is again the [notebook](/pages/demos/MCMC_inference.html).

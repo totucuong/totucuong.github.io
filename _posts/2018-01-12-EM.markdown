@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "expectation maximization"
+date:   2018-01-12
+author: To Tu Cuong
+---
+
+Let's talk about [expectation maximization](/pages/demos/em.html) algorithm.
