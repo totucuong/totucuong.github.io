@@ -12,11 +12,11 @@ The challenge is to scale truth discovery techniques to cope with millions of da
 
 <h3>Publications</h3>
   <ul class="posts">
-        <li><span>2017</span> &raquo; <a href="https://link.springer.com/chapter/10.1007/978-3-319-47874-6_11">Applicability of Sequence Analysis Methods in Analyzing Peer-Production Systems: A Case Study in Wikidata</a></li>
-        <li><span>2014</span> &raquo; <a href="https://link.springer.com/chapter/10.1007/978-3-319-19743-2_37">DOOR: A Data Model for Crowdsourcing with Application to Emergency Response</a></li>
-        <li><span>2014</span> &raquo; <a href="http://dl.acm.org/citation.cfm?doid=2534732.2534738">CrowdRoute: a crowd-sourced routing algorithm in public transit networks</a></li>
-        <li><span>2013</span> &raquo; <a href="http://dl.acm.org/citation.cfm?doid=2492517.2500274">ChurnVis: visualizing mobile telecommunications churn on a social network with attributes</a></li>
-        <li><span>2009</span> &raquo; <a href="./documents/master_thesis.pdf">Visualization of Large Process Models"</a></li>
+        <li><a href="https://link.springer.com/chapter/10.1007/978-3-319-47874-6_11">Applicability of Sequence Analysis Methods in Analyzing Peer-Production Systems: A Case Study in Wikidata</a></li>
+        <li><a href="https://link.springer.com/chapter/10.1007/978-3-319-19743-2_37">DOOR: A Data Model for Crowdsourcing with Application to Emergency Response</a></li>
+        <li><a href="http://dl.acm.org/citation.cfm?doid=2534732.2534738">CrowdRoute: a crowd-sourced routing algorithm in public transit networks</a></li>
+        <li><a href="http://dl.acm.org/citation.cfm?doid=2492517.2500274">ChurnVis: visualizing mobile telecommunications churn on a social network with attributes</a></li>
+        <li><a href="./documents/master_thesis.pdf">Visualization of Large Process Models</a></li>
   </ul>
 
 ---
