@@ -1,6 +1,6 @@
 ---
 layout: post
-title: random thoughts.
+title: A journey into Machine Learning.
 description: A blog that aims to explain machine learning concepts intuitively.
 ---
 
