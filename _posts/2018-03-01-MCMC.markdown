@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "markov chain monte carlo inference"
+title:  "Markov Chain Monte Carlo inference"
 date:   2018-03-01
 author: To Tu Cuong
 ---
