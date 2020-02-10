@@ -4,12 +4,12 @@ title:  "Noisy Gradients I - The Theory"
 date:   2019-11-02
 author: To Tu Cuong
 ---
-In variational infernce, reinforcement learning, or sensitivity analysis, it is very common that the loss function has the form $E_{p(x;\theta)}[f(x)]$. This loss function is typically minimized using stochastic optimization, which requires us to compute its noisy gradients $\nabla_{\theta}E_{p(x;\theta)}[f(x)] = E_{p(x;\theta)}[h(x)].$ 
+In variational infernce, reinforcement learning, or sensitivity analysis, it is very common that the loss function has the form $E_{p(x;\theta)}[f(x)]$. This loss function is typically minimized using stochastic optimization, which requires us to compute its noisy gradients $\nabla_{\theta}E_{p(x;\theta)}[f(x)]$. 
 
 In this post, I will only focus on explaining the theory of computing noisy gradients and leave the implementation part to a future post. I also drop a lot of mundane theortical details. I feel that this help me to understand the topic better. The readers are referred to the references for more in-depth discussion.
 
 
-The original gradients is rewritten as an expectation of another function $h(x)$, which is called a **surrogacy loss**. This enables us to estimate the original gradient using simulation, hence, the name **noisy gradients**. 
+The original gradients is rewritten as an expectation of another function $h(x)$, $\nabla_{\theta}E_{p(x;\theta)}[f(x)] = E_{p(x;\theta)}[h(x)]$, which is called a **surrogacy loss**. This enables us to estimate the original gradient using simulation, hence, the name **noisy gradients**. 
 
 $$
 \begin{align}
