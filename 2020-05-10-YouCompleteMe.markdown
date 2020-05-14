@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "YouCompleteMe with Vim8 on MacOS
-date:   2020-05-14
+date:   2020-05-10
 author: To Tu Cuong
 ---
 I'm switching my IDE from Visual Code to Vim8. Vim8 coupled with plugins like FZF or CtrlP (fuzzy file search) or jedi-python (python editing) provides a lot of functionalities like any modern IDE. The nice thing is that it is quite easy to remember all those shortcuts.
