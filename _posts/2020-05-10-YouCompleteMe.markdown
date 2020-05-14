@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YouCompleteMe with Vim8 on MacOS
+title:  "YouCompleteMe with Vim8 on MacOS"
 date:   2020-05-10
 author: To Tu Cuong
 ---
@@ -17,18 +17,16 @@ First, you need to clone YouCompleteMe and put it your ~/.vim/plugged. This is a
     cd ~/.vim/plugged 
     git clone https://github.com/ycm-core/YouCompleteMe.git
 
-Then, you go to the YouCompleteMe cloned repo and compile it
+Then, you go to the YouCompleteMe cloned repo and compile it:
 
     cd ~/YouCompleteMe
     git submodule update --init --recursive
     /usr/bin/python3 install.py
 
 Note that you need to use the python3 that comes with MacOS. Using conda python will mess the compiling up. 
-Finally, you can add the following line to your ~/.vimrc
+Finally, you can add the following line to your ~/.vimrc:
     
     Plug 'ycm-core/YouCompleteMe'
 
-Remember to excute ':PlugInstall' within vim to install YouCompleteMe. 
-
-That's it I hope you enjoy vim and save up 1 or 2 hours of searching how to install YouCompleteMe for vim8 on MacOs.
+Remember to excute "PlugInstall" within vim to install YouCompleteMe. That's it. I hope that you enjoy vim and save up 1 or 2 hours of searching how to install YouCompleteMe for vim8 on MacOS :(.
  
